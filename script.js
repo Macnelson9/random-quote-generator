@@ -1,10 +1,12 @@
 'use strict';
 
+// Selected elements
 const quoteEl = document.getElementById('quote');
 const quoteAuthor = document.getElementById('quote-author');
 const getQuote = document.getElementById('get-Quote');
-const url = 'https://api.quotable.io/random';
+const url = 'https://qapi.vercel.app/api/random';
 
+// Logic to display quotes
 // const getQuotes = () => {
 //   fetch(url)
 //     .then(response => response.json())
@@ -30,8 +32,9 @@ async function getQuotes() {
 
     const response = await fetch(url);
     const data = await response.json();
-    const quoteContent = data.content;
-    const quoteAuthors = data.author;
+    const quoteContent = data.quote;
+    const quoteAuthors = `- ${data.author}`;
+
     quoteEl.innerText = quoteContent;
     quoteAuthor.innerText = quoteAuthors;
     getQuote.innerText = 'Get a Quote';

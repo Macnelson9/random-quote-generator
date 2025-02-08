@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 
+/* Basic styling */
 *,
 *::before,
 *::after {
@@ -59,6 +60,10 @@ button:hover {
   width: 50%;
 }
 
+.quote {
+  text-align: center;
+}
+
 .quote-author {
   font-style: italic;
   font-size: 0.85rem;
@@ -69,6 +74,13 @@ button:hover {
   animation: appear 1s ease;
 }
 
+@media (min-width: 320px) {
+  .quote-container {
+    width: 90%;
+  }
+}
+
+/* Animations */
 @keyframes slideUp {
   0% {
     transform: translateY(0%);
